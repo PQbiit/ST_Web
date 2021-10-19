@@ -1,0 +1,33 @@
+#popular-shows-container{
+    display: flex;
+    flex-direction: column;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+}
+
+#show-info-card{
+    width: 40%;
+}
+
+#shows-slider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    width: 60%;
+}
+
+#shows-glide-track{
+    height: 80%;
+}
+
+#shows-glide-buttons{
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}

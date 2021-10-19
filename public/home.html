@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Series.Time</title>
+        <link rel="stylesheet" href="./styles/nav-bar.css">
+        <link rel="stylesheet" href="./styles/home.css">
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <section id="logo-section">
+                <img src="../media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
+            </section>
+            <section id="nav-links">
+                <a class="nav-link active" href="./home.html">Home</a>
+                <a class="nav-link" href="./series.html">Series</a>
+            </section>
+            <section id="search-section">
+                <form id="search-bar-form">
+                    <input type="text" name="search-bar" id="search-bar" placeholder="Search...">
+                    <button id="search-button"></button>
+                </form>
+            </section>
+            <section id="profile-section">
+                <div id="profile-button">
+                    <img src="" alt="Profile" id="profile-pic-icon">
+                </div>
+            </section>
+        </nav>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="../media/img1.jpg" style="width:100%">
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="../media/img2.jpeg" style="width:100%">
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="../media/img3.jpg" style="width:100%">
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+        </div>
+        <script src="./home.js"></script>
+    </body>
+</html>

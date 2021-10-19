@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Popular TV Series</title>
+        <link rel="stylesheet" href="./styles/nav-bar.css">
+        <link rel="stylesheet" href="./styles/series.css">
+        <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <section id="logo-section">
+                <img src="../media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
+            </section>
+            <section id="nav-links">
+                <a class="nav-link" href="./home.html">Home</a>
+                <a class="nav-link active" href="./series">Series</a>
+            </section>
+            <section id="search-section">
+                <form id="search-bar-form">
+                    <input type="text" name="search-bar" id="search-bar" placeholder="Search...">
+                    <button id="search-button"></button>
+                </form>
+            </section>
+            <section id="profile-section">
+                <div id="profile-button">
+                    <img src="" alt="Profile" id="profile-pic-icon">
+                </div>
+            </section>
+        </nav>
+
+        <div id="popular-shows-container">
+            <h2>Popular right now</h2>
+            <div id="container">
+                <aside id="show-info-card">
+                    <section id="title-section">
+                        <h6 id="show-title"></h6>
+                    </section>
+                    <section id="show-data-section">
+                        <label for="show-doi">Date of issue:</label> <p id="show-doi"></p>
+                        <label for="show-country">Country: </label><p id="show-country"></p>
+                        <label for="show-genre">Genre: </label><p id="show-genre"></p>
+                    </section>
+                    <section id="show-desc-section">
+                        <label for="show-description">Description:</label>
+                        <p id="show-description"></p>
+                    </section>
+                    <div id="button-container">
+                        <button id="add-favorite">Add to favorites</button>
+                    </div>                    
+                </aside>
+                <div id="shows-slider" class="shows-glide">
+                    <div id="shows-glide-track" class="glide__track" data-glide-el="track">
+                      <ul class="glide__slides">
+                        <li class="glide__slide">0</li>
+                        <li class="glide__slide">1</li>
+                        <li class="glide__slide">2</li>
+                      </ul>
+                    </div>
+                    <div id="shows-glide-buttons" data-glide-el="controls">
+                        <button data-glide-dir="<"><</button>
+                        <button data-glide-dir=">">></button>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div id="news-container">
+            <h2>News</h2>
+            <div id="news-slider" class="news-glide">
+                <div data-glide-el="controls">
+                    <button data-glide-dir="<"><</button>
+                    <button data-glide-dir=">">></button>
+                </div>
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">0</li>
+                    <li class="glide__slide">1</li>
+                    <li class="glide__slide">2</li>
+                  </ul>
+                </div> 
+            </div> 
+        </div>
+        
+        <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+        <script>
+            new Glide('.shows-glide').mount();
+            new Glide('.news-glide').mount();
+        </script>
+        <script src="./series.js"></script>
+    </body>
+</html>
