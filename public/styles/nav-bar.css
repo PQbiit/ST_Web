@@ -84,3 +84,14 @@ a.active{
 #ST-logo{
     width: 80%;
 }
+
+#profile-pic-icon{
+    border-radius: 10px;
+    width: 12%;
+}
+
+.profile-button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}

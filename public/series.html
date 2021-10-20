@@ -5,19 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Popular TV Series</title>
-        <link rel="stylesheet" href="./styles/nav-bar.css">
-        <link rel="stylesheet" href="./styles/series.css">
-        <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-        <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+        <link rel="stylesheet" href="/styles/nav-bar.css">
+        <link rel="stylesheet" href="/styles/series.css">
+        <link rel="stylesheet" href="/glider">
     </head>
     <body>
         <nav id="nav-bar">
             <section id="logo-section">
-                <img src="../media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
+                <img src="/media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
             </section>
             <section id="nav-links">
-                <a class="nav-link" href="./home.html">Home</a>
-                <a class="nav-link active" href="./series">Series</a>
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/series">Series</a>
             </section>
             <section id="search-section">
                 <form id="search-bar-form">
@@ -26,8 +25,10 @@
                 </form>
             </section>
             <section id="profile-section">
-                <div id="profile-button">
-                    <img src="" alt="Profile" id="profile-pic-icon">
+                <div class="profile-button">
+                    <a class="profile-button" href="/login">
+                        <img src="/media/profile_ph.png" alt="Profile" id="profile-pic-icon">
+                    </a>
                 </div>
             </section>
         </nav>
@@ -54,10 +55,8 @@
                 </aside>
                 <div id="shows-slider" class="shows-glide">
                     <div id="shows-glide-track" class="glide__track" data-glide-el="track">
-                      <ul class="glide__slides">
-                        <li class="glide__slide">0</li>
-                        <li class="glide__slide">1</li>
-                        <li class="glide__slide">2</li>
+                      <ul id="shows-list" class="glide__slides">
+                        <!-- <li class="glide__slide">0</li> -->
                       </ul>
                     </div>
                     <div id="shows-glide-buttons" data-glide-el="controls">
@@ -84,12 +83,15 @@
                 </div> 
             </div> 
         </div>
-        
-        <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/series.js"></script>
+        <script src="/glider.js"></script>
         <script>
-            new Glide('.shows-glide').mount();
+            // let showsGlider = new Glide('.shows-glide');
+            // showsGlider.on('mount.before',()=>{
+                
+            // })
             new Glide('.news-glide').mount();
         </script>
-        <script src="./series.js"></script>
     </body>
 </html>

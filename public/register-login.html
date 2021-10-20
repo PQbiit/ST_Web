@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Series.Time</title>
+        <link rel="stylesheet" href="/styles/nav-bar.css">
+        <link rel="stylesheet" href="/styles/register-login.css">
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <section id="logo-section">
+                <img src="/media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
+            </section>
+            <section id="nav-links">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/series">Series</a>
+            </section>
+            <section id="search-section">
+                <form id="search-bar-form">
+                    <input type="text" name="search-bar" id="search-bar" placeholder="Search...">
+                    <button id="search-button"></button>
+                </form>
+            </section>
+            <section id="profile-section">
+                <div class="profile-button">
+                    <a class="profile-button" href="/login">
+                        <img src="/media/profile_ph.png" alt="Profile" id="profile-pic-icon">
+                    </a>
+                </div>
+            </section>
+        </nav>
+
+        <div class="form-container">
+            <section id="log-in" class="form-container">
+                <form id="log-in-form">
+                    <input type="text" name="login-username" id="login-username" placeholder="User name">
+                    <input type="password" name="login-password" id="login-password" placeholder="Password">
+                    <button>Log in</button>
+                </form>
+                <p>Haven't registered?</p>
+                <a id="create-link">Create an account</a>
+            </section>
+            <section id="register" class="hidden-form">
+                <form id="register-form">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="text" name="username" id="username" placeholder="User name">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <button>Create account</button>
+                </form>
+                <p>Already registered?</p>
+                <a id="log-in-link">Log in here</a>
+            </section>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/register-login.js"></script>
+    </body>
+</html>

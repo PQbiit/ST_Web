@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Series.Time</title>
         <link rel="stylesheet" href="/styles/nav-bar.css">
-        <link rel="stylesheet" href="/styles/home.css">
+        <link rel="stylesheet" href="/styles/profile-dashboard.css">
     </head>
     <body>
         <nav id="nav-bar">
@@ -32,29 +32,26 @@
             </section>
         </nav>
 
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-              <img src="../media/img1.jpg" style="width:100%">
-            </div>
-          
-            <div class="mySlides fade">
-              <img src="../media/img2.jpeg" style="width:100%">
-            </div>
-          
-            <div class="mySlides fade">
-              <img src="../media/img3.jpg" style="width:100%">
-            </div>
-          
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
+        <div id="profile-banner">
+            <img id="cover" src="/media/img1.jpg" alt="bgphoto">
+            <section id="user-banner-info">
+                <img id="profile-picture" src="/media/profile_ph.png" alt="" srcset="">
+                <h1>UserName</h1>
+            </section>
+        </div>
+
+        <div id="fav-shows">
+            <h2>Your favorite shows</h2>
+            <div id="fav-shows-container">
             </div>
         </div>
-        <script src="/home.js"></script>
+
+        <div id="fav-actors">
+            <h2>Your favorite actors</h2>
+            <div id="fav-actors-container">
+            </div>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/profile-dashboard.js"></script>
     </body>
 </html>
