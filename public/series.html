@@ -38,7 +38,7 @@
             <div id="container">
                 <aside id="show-info-card">
                     <section id="title-section">
-                        <h6 id="show-title"></h6>
+                        <h3 id="show-title"></h3>
                     </section>
                     <section id="show-data-section">
                         <label for="show-doi">Date of issue:</label> <p id="show-doi"></p>
@@ -60,8 +60,8 @@
                       </ul>
                     </div>
                     <div id="shows-glide-buttons" data-glide-el="controls">
-                        <button data-glide-dir="<"><</button>
-                        <button data-glide-dir=">">></button>
+                        <button id="back-shows" data-glide-dir="<"><</button>
+                        <button id="next-shows" data-glide-dir=">">></button>
                     </div>
                 </div>   
             </div>
@@ -84,8 +84,8 @@
             </div> 
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="/series.js"></script>
         <script src="/glider.js"></script>
+        <script src="/series.js"></script>
         <script>
             // let showsGlider = new Glide('.shows-glide');
             // showsGlider.on('mount.before',()=>{
