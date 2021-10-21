@@ -50,3 +50,42 @@ h2{
     font-family: aristotelica_display_trialRg;
     margin-left: 40px;
 }
+
+#fav-shows-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* SHOW CARD CSS */
+.show-card{
+    width: 250px;
+    height: 100%;
+    display: flex;
+    border-radius: 130px;
+    flex-direction: column;
+}
+
+#show-cover{
+    width: 100%;
+    height: 80%;
+}
+#image{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+#lower-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+}
+h3,p{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Series.Time</title>
+        <link rel="stylesheet" href="/styles/nav-bar.css">
+        <link rel="stylesheet" href="/styles/show.css">
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <section id="logo-section">
+                <img src="/media/ST-Logo.png" alt="ST-logo" id="ST-logo"> 
+            </section>
+            <section id="nav-links">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/series">Series</a>
+            </section>
+            <section id="search-section">
+                <form id="search-bar-form">
+                    <input type="text" name="search-bar" id="search-bar" placeholder="Search...">
+                    <button id="search-button"></button>
+                </form>
+            </section>
+            <section id="profile-section">
+                <div class="profile-button">
+                    <a id="profile-link" class="profile-button" href="/login">
+                        <img src="/media/profile_ph.png" alt="Profile" id="profile-pic-icon">
+                    </a>
+                </div>
+            </section>
+        </nav>
+
+        <div id="show-banner">
+            <img id="cover-photo" src="" alt="bgphoto">
+            <section id="show-banner-info">
+                <h1 id="show-title"></h1>
+                <section id="info-container">
+                    <p id="type" class="bannerText"></p>
+                    <p id="duration" class="bannerText"></p>
+                    <p id="content-rating" class="bannerText"></p>
+                    <p id="show-length" class="bannerText"></p>
+                </section>
+            </section>
+        </div>
+
+        <div id="bottom-container">
+            <aside id="left-info">
+                <section id="meta-container">
+                    <div id="rating-pop-container">
+                        <div class="text-container">
+                            <label for="rating">Rating</label>
+                            <h3 id="rating"></h3>
+                        </div>
+                        <div class="text-container">
+                            <label for="popularity">Popularity</label>
+                            <h3 id="popularity"></h3>
+                        </div>
+                        
+                    </div>
+                    <div id="genre-container">
+                    
+                    </div>
+                </section>
+                <p id="plot"></p>
+            </aside>
+            <aside id="video-container">
+                <iframe id="youtube-video" src="" frameborder=""></iframe>
+            </aside>
+        </div>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+        <script src="/show.js"></script> 
+    </body>
+</html>

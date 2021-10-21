@@ -101,7 +101,7 @@ async function setupUI(){
     showTitle.innerText = series[0].title;
     showDateOfIssue.innerText = series[0].start_year;
     showGenre.innerText = seriesGenre
-    showDesc.innerText = series[0].description;
+    showDesc.innerText = series[0].plot;
 }
 
 function createSliderCard(){
@@ -109,23 +109,29 @@ function createSliderCard(){
         let cardContainer = document.createElement('li');
         cardContainer.classList.add('glide__slide');
         cardContainer.innerHTML = `
-            <div id="show-card">
+            <div id="show-card" onclick="goToShowPage(\'${series[i].imdb_id}\')">
                 <div id="show-cover">
                     <img id="image" src="${series[i].image_url}">
                 </div>
                 <div id="lower-container">
-                    <aside id="data">
-                        <h3>${series[i].title}</h3>
-                        <p>${series[i].start_year}</p>
-                    </aside>
-                    <aside id="fav-button-container">
-                        <button class="fav-marked">Add to favorites</button>
-                    </aside>
+                    <h3>${series[i].title}</h3>
+                    <p>${series[i].start_year}</p>
                 </div>
             </div>
         `
         showsList.appendChild(cardContainer);
     }
+}
+
+function goToShowPage(imdbID){
+    console.log(imdbID)
+    axios.post('/showData',{imdbID}).then(res =>{
+        if(res.status === 200){
+            window.location = `/series/${imdbID}/`;
+        }
+    }).catch(err=>{
+        console.log(err);
+    });
 }
 
 function updateInfoCard(){
