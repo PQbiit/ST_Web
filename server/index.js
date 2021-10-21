@@ -15,9 +15,10 @@ const port = process.env.PORT || 4040;
 app.get('/',controller.home);
 app.get('/series',controller.series);
 app.get('/login',controller.loginRegister);
-app.get('/user/dashboard',controller.userDashboard);
 app.post('/login',controller.login);
 app.post('/register',controller.register);
-app.get('/data/dashboard',controller.fetchProfileData)
+app.get('/user/:id/dashboard',controller.dashboardRedirect);
+app.post('/user/:id/fav',controller.addFavorite);
+app.get('/user',controller.getUserInstance);
 
 app.listen(port,() => console.log(`Server is listening on port 4040`));

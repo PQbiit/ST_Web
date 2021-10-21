@@ -44,7 +44,10 @@ registerForm.addEventListener('submit',(e) =>{
         password
     };
     console.log(user)
-    axios.post('/register',user);
+    axios.post('/register',user).then(res =>{
+        let userID = res.data.id;
+        window.location = `/user/${userID}/dashboard`;
+    });
 });
 
 loginForm.addEventListener('submit',e =>{
@@ -55,7 +58,8 @@ loginForm.addEventListener('submit',e =>{
         username,
         password
     };
-    axios.post('/login',userCredentials).then(
-        window.location = '/user/dashboard'
-    );
+    axios.post('/login',userCredentials).then(res =>{
+        let userID = res.data.id;
+        window.location = `/user/${userID}/dashboard`;
+    });
 });

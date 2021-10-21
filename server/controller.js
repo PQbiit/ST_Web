@@ -23,7 +23,7 @@ module.exports = {
     loginRegister: (req,res) =>{
         res.sendFile(path.join(__dirname,'../public/register-login.html'));
     },
-    userDashboard: (req,res) =>{
+    dashboardRedirect: (req,res) =>{
         res.sendFile(path.join(__dirname,'../public/profile-dashboard.html'));
     },
     login: (req,res) =>{
@@ -31,7 +31,7 @@ module.exports = {
         let targetIndex = users.findIndex(user => user.username === username);
         if(users[targetIndex].password === password){
             sessionUser = users[targetIndex];
-            res.sendStatus(200);
+            res.status(200).send(sessionUser);
         }else{
             res.sendStatus(400);
         }
@@ -44,17 +44,27 @@ module.exports = {
             email,
             username,
             password,
-            profile_img: 'media/profile1.jpeg',
+            profile_img: '/media/profile2.jpeg',
             fav_shows: [],
             fav_actors: []
         };
-        console.log(newUser)
         users.push(newUser);
         currentID +=1;
         sessionUser = newUser;
-        res.sendStatus(200);
+        res.status(200).send(sessionUser);
     },
-    fetchProfileData: (req,res) =>{
+    addFavorite: (req,res) =>{
+        let favSeries = req.body;
+        let userID = req.params.id;
+        let targetID = users.findIndex(user => user.id = userID);
+        if (targetID !== -1) {
+            users[targetID].fav_shows.push(favSeries);
+            res.status(200).send(users[targetID]);
+        }else{
+            res.sendStatus(404);
+        }
+    },
+    getUserInstance: (req,res) =>{
         res.status(200).send(sessionUser);
     }
 }

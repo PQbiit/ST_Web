@@ -11,6 +11,7 @@ const nextShowsButton = document.querySelector('#next-shows');
 const glider = new Glide('.shows-glide',{
     perView: 2
 });
+let userInstance = null;
 let series = [];
 let activeCardIndex = 0;
 
@@ -33,6 +34,26 @@ nextShowsButton.addEventListener('click',()=>{
     glider.go(`=${activeCardIndex}`);
     updateInfoCard();
 });
+
+favButton.addEventListener('click',()=>{
+    console.log(userInstance);
+    axios.post(`/user/${userInstance.id}/fav`,series[activeCardIndex]).then(res =>{
+        userInstance = res.data;
+        favButton.disabled = true;
+        console.log(userInstance);
+    }).catch(err =>{
+        console.log(err);
+    });
+});
+
+function getUserInstance(){
+    axios.get('/user').then(res =>{
+        userInstance = res.data;
+        updateNavBar();
+    }).catch(err =>{
+        console.log(err);
+    })
+}
 
 async function setShowsData() {
     let showsIDs = [];
@@ -128,4 +149,14 @@ function resetText(){
     showDesc.innerText = ""
 }
 
+function updateNavBar(){
+    let profileIcon = document.querySelector('#profile-pic-icon');
+    let profileButton = document.querySelector('#profile-link');
+    if(userInstance){
+        profileIcon.setAttribute('src',userInstance.profile_img);
+        profileButton.setAttribute('href',`/user/${userInstance.id}/dashboard`);
+    }
+}
+
+getUserInstance();
 setupUI();

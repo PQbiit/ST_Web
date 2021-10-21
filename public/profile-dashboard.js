@@ -1,19 +1,18 @@
 const profilePicture = document.querySelector('#profile-picture');
 const userNameTag = document.querySelector('h1');
 const profileIcon = document.querySelector('#profile-pic-icon');
-let currentUser = null;
+let userInstance = null;
 
-function setData(){
-    axios.get('/data/dashboard').then(res =>{
-        console.log(res.data);
-        currentUser = res.data;
-        console.log(currentUser);
-        profilePicture.setAttribute('src',currentUser.profile_img);
-        userNameTag.textContent = currentUser.name;
-        profileIcon.setAttribute('src',currentUser.profile_img)
+function setUserData(){
+    axios.get('/user').then(res =>{
+        userInstance = res.data;
+        console.log(userInstance);
+        profilePicture.setAttribute('src',userInstance.profile_img);
+        userNameTag.textContent = userInstance.name;
+        profileIcon.setAttribute('src',userInstance.profile_img)
     }).catch(err =>{
         console.log(err);
     });
 }
 
-setData();
+setUserData();
