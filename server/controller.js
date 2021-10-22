@@ -2,7 +2,7 @@ const axios = require('axios');
 const path = require('path');
 
 const users = [{
-    id: 1,
+    id: 0,
     name: 'Jhon Appleseed',
     email: 'test1@hotmail.com',
     username: 'test1',
@@ -42,7 +42,7 @@ const users = [{
     fav_actors: [],
     currentShow: null
 }];
-let currentID = users[users.length-1].id;
+let currentID = users[users.length-1].id + 1;
 let sessionUser = null;
 
 module.exports = {
@@ -108,15 +108,18 @@ module.exports = {
         users.push(newUser);
         currentID +=1;
         sessionUser = newUser;
+        console.log(users);
         res.status(200).send(sessionUser);
     },
     addFavorite: (req,res) =>{
         let favSeries = req.body;
         let userID = req.params.id;
-        let targetID = users.findIndex(user => user.id = userID);
+        let targetID = users.findIndex(user => user.id === parseInt(userID));
+        console.log(userID,targetID)
         if (targetID !== -1) {
             users[targetID].fav_shows.push(favSeries);
             res.status(200).send(users[targetID]);
+            console.log(users[targetID].fav_shows)
         }else{
             res.sendStatus(404);
         }
